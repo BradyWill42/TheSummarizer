@@ -5,15 +5,23 @@ from tkinter import messagebox, ttk
 from PIL import ImageGrab, Image
 import openai
 import ctypes
+import platform
 
 # Set your OpenAI API key - v1
 
 # Ensure DPI awareness for accurate screen capture on Windows
 def make_dpi_aware():
+    """
+    Sets DPI awareness for Windows systems to improve screen region selection accuracy.
+    Does nothing on non-Windows platforms.
+    """
     try:
-        ctypes.windll.user32.SetProcessDPIAware()
+        if platform.system() == "Windows":
+            ctypes.windll.user32.SetProcessDPIAware()
+    except AttributeError:
+        print("Failed to set DPI awareness: 'ctypes.windll' not available on this platform.")
     except Exception as e:
-        print(f"Failed to set DPI awareness: {e}")
+        print(f"Unexpected error while setting DPI awareness: {e}")
 
 
 # Function to select a screen region
