@@ -8,6 +8,7 @@ import ctypes
 import platform
 
 # Set your OpenAI API key - v1
+openai.api_key = ""
 
 # Ensure DPI awareness for accurate screen capture on Windows
 def make_dpi_aware():
