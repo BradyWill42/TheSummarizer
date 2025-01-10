@@ -13,7 +13,6 @@ Action-Oriented: Summaries often end with a request for questions or a statement
 Paragraph-Length Summaries: Each summary is concise, typically 1–3 short paragraphs, with key points condensed into accessible and skimmable text.
 Colloquial Phrases: Common idiomatic language (e.g., “hope all is well,” “a good thing of course except now when you have to pay taxes on it!”) makes the summaries feel personal.
 Caps for Emphasis: Select words or phrases (e.g., “MASSIVE gain,” “BIG refund”) are occasionally capitalized to emphasize critical points.
-P.S. Notes: Additional clarifications or closing comments are often formatted as a “P.S.,” creating an informal and friendly closing.
 Instructions for AI to Recreate Tone, Structure, and Form:
 Start with Personalized Context:
 Open with a warm, conversational acknowledgment of the client’s overall financial performance (e.g., “Another great year for you!”).
