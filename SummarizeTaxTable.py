@@ -193,7 +193,7 @@ class ScreenshotSummarizerApp:
             tone_instructions = self.get_tone_instructions(tone)
 
             prompt = f"""
-            You are a tax professional analyzing a screenshot of a financial or tax document.
+            You are a great tax expert analyzing a screenshot of a financial or tax document.  
             Following the tone indicated in the provided paragraphs: {tone_instructions}
             Summarize the key information from the document in {self.num_paragraphs.get()} paragraph(s).
             """
