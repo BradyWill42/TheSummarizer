@@ -9,7 +9,7 @@ import platform
 
 # Set your OpenAI API key - v1
 openai.api_key = ""
-
+#test
 # Ensure DPI awareness for accurate screen capture on Windows
 def make_dpi_aware():
     """
