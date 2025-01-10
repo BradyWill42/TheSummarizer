@@ -9,7 +9,7 @@ import platform
 
 # Set your OpenAI API key - v1
 openai.api_key = ""
-#test
+
 # Ensure DPI awareness for accurate screen capture on Windows
 def make_dpi_aware():
     """
@@ -161,6 +161,13 @@ class ScreenshotSummarizerApp:
             command=self.analyze_tax_document_screenshot
         ).pack(pady=10)
 
+        ttk.Button(
+            root, 
+            text="Reset", 
+            command=self.reset_app
+        ).pack(pady=10)
+
+
         # Output Text Box
         tk.Label(root, text="Generated Summary:").pack(pady=5, anchor="w")
         output_frame = tk.Frame(root)
@@ -291,6 +298,11 @@ class ScreenshotSummarizerApp:
         except Exception as e:
             print(f"Error loading JJ tone instructions: {e}")
             return "Use a conversational and personalized tone with enthusiasm."
+        
+    def reset_app(self):
+        self.image_paths.clear()
+        self.output_text.delete("1.0", tk.END)
+        messagebox.showinfo("Reset", "The application has been reset.")
 
 
 
