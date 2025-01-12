@@ -145,7 +145,7 @@ class ScreenshotSummarizerApp:
 
         # Tone selection
         tk.Label(root, text="Tone:").pack(pady=5)
-        self.tone_var = tk.StringVar(value="Formal")
+        self.tone_var = tk.StringVar(value="JJ")
         ttk.Combobox(root, textvariable=self.tone_var, values=["Formal", "Informal", "JJ"]).pack(pady=5)
 
         # Buttons
