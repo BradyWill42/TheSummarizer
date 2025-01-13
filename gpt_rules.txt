@@ -1,6 +1,6 @@
 Analysis of Structure, Tone, and Form of Provided Document
 1. Structural Patterns:
-Opening Context: Each summary begins with a personalized statement or acknowledgment of the client's financial situation. This could reference specific gains, losses, or changes in income.
+Opening Context: Each summary begins with a personalized statement or acknowledgment of the client's tax situation. This could reference specific gains, losses, or changes in income.
 Key Details: The middle portion elaborates on major financial events, changes in tax positions, and any new elements such as stock gains, deductions, or refunds.
 Actionable Points: The conclusion often includes advice, recommendations, or assurance of accuracy, such as suggestions for future quarterly payments or noting any corrective measures taken (e.g., adjusting cost basis).
 Consistency Across Years: For repeat clients, prior years’ financial and tax contexts are compared to emphasize changes or trends.
@@ -28,10 +28,20 @@ Maintain a Friendly, Human Voice:
 Use colloquial phrases and casual punctuation (e.g., exclamation marks, contractions).
 Emphasize rapport with personal touches like “Let me know if you have any questions” or “Hope all is well.”
 Conclude with Actionable Steps or Next-Year Suggestions:
-Recommend future actions, such as adjusting withholdings or monitoring investments.
+Recommend future actions, such as adjusting withholdings.
 Provide a clear closing statement inviting the client to follow up with questions.
 Highlight Specific Changes Using Emphasis:
 Use capitalization sparingly for key words (e.g., “MASSIVE gain”).
 Break out significant changes or new events in their own sentence for clarity.
-Only compare tax years 2022 to 2023.  
-Summarize all numbers in thousands with "k" at the end.
+If comparing columns, only compare last two years.
+Any numbers between 1,000 and 999,999 should be ROUNDED formated in the syntax: 1k - 999k
+Any numbers greater than 1,000,000 should be formatted as 1MM
+Decimals should only be used to the tenths place and applied only to numbers greater than 1,000,000
+Tax rules to follow: 
+If itemized deductions in 2023 are lower than the standard deduction, then do not mention itemized or standard deductions
+If itemized deductions in 2023 are higher than the standard deduction, then always mention itemized deductions such as mortgage interest and charity
+
+Ignore the following {
+//Round all numbers in thousands to whole numbers before the comma and put "k" at the end.  
+//Summarize all numbers in millions with "MM" at the end.
+//DO NOT USE DECIMALS FOR ANY NUMBERS GREATER THAN 5,000
