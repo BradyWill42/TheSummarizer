@@ -7,8 +7,15 @@ import openai
 import ctypes
 import platform
 
+myTestApiKey = os.environ["API_KEY"]
+
+if myTestApiKey:
+    print(myTestApiKey)
+else:
+    print("API_KEY not set")
+
 # Set your OpenAI API key - v1
-openai.api_key = ""
+openai.api_key = myTestApiKey
 
 # Ensure DPI awareness for accurate screen capture on Windows
 def make_dpi_aware():
