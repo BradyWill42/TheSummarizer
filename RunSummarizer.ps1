@@ -1,7 +1,7 @@
 $DIRECTORY = (Get-Item .).FullName
 
-echo $DIRECTORY
-cd $DIRECTORY
+Write-Output $DIRECTORY
+Set-Location $DIRECTORY
 
 Unblock-File -Path .\.venv\Scripts\Activate.ps1
 
