@@ -352,3 +352,17 @@ The tax documents presented include a **Schedule 3 (Form 1040)** from 2023 detai
 
 This document is a Schedule 8812 (Form 1040) for the year 2023, detailing the Child Tax Credit and Credit for Other Dependents. The primary focus is the calculation of potential credits based on income and other factors like the number of qualifying children. The client's income is approximately 1,405k, and the calculation results in a reduction due to high income. The child tax credit amount is ultimately zero due to the phase-out at high income levels (line 10 shows an income reduction calculation reaching 1,005k, and line 11 indicates the excess). As the credits are not applicable, there is no tax benefit received under these criteria. For further action, consider tax planning strategies to potentially optimize other available credits or deductions.
 -------------------------------------------------------------
+
+
+Hey [Client Name],
+
+Hope all is well! Looking at your 2022 and 2023 tax returns, it's clear you had another great year! Your total income jumped significantly from 260k to 468k, a massive increase of 207k! This is largely due to a huge increase in wages, salaries, tips, etc. from 259k to 462k.  Your taxable income also saw a substantial increase, going from 234k to 440k.  However, your total tax increased by a more modest 56k, from 38k to 94k. This is still a significant increase, but considering the substantial increase in your income, this is good news!
+
+
+Your total tax increased, but it's important to note that your itemized deductions in 2023 (27k) were significantly higher than your standard deduction (26k) and you received higher credits in 2023 (98k) than in 2022 (44k).  The increase in your tax liability is primarily due to the considerable rise in your income.  Compared to 2022, your state and local taxes increased by 1k.  Your interest deduction remained relatively stable, and your contributions were approximately the same. Overall, your tax situation is healthy despite the increases.
+
+
+
+To prepare for next year, you might consider adjusting your withholdings to better reflect your income. Given your significant income increase, I’d recommend a quick follow-up to review your W-4 and make sure everything's correctly set for 2024.  Let me know if you have any questions or would like to schedule a call to discuss this further!
+
+-------------------------------------------------------------

@@ -119,7 +119,7 @@ def analyze_images_with_gemini(image_paths, prompt):
 
     uploadedFiles = [gemini.upload_file(path=(img)) for img in image_paths]
 
-    response = model.generate_content([uploadedFiles, prompt])
+    response = model.generate_content([*uploadedFiles, prompt])
     print("Generated Summary:\n", response.text)
 
     return response.text
@@ -179,6 +179,12 @@ class ScreenshotSummarizerApp:
         tk.Label(root, text="Tone:").pack(pady=5)
         self.tone_var = tk.StringVar(value="JJ")
         ttk.Combobox(root, textvariable=self.tone_var, values=["Formal", "Informal", "JJ"]).pack(pady=5)
+
+        # AI Selection
+        tk.Label(root, text="AI Model:").pack(pady=5)
+        self.ai_models = tk.StringVar(value="gpt-4o")
+        ttk.Combobox(root, textvariable=self.ai_models, values=["gpt-4o", "gemini"]).pack(pady=5)
+
 
         # Buttons
         ttk.Button(
@@ -301,8 +307,12 @@ class ScreenshotSummarizerApp:
             # Call GPT function to analyze and generate summary
             #summary = analyze_images_with_gpt(self.image_paths, prompt)
 
-            summary = analyze_images_with_gemini(self.image_paths, prompt)
-
+            if (self.ai_models == "gemini"):
+                summary = analyze_images_with_gemini(self.image_paths, prompt)
+            elif (self.ai_models == "gpt-4o"):
+                summary = analyze_images_with_gpt(self.image_paths, prompt)
+            else:
+                messagebox.showinfo("Invalid AI Model")
 
             # Add the summary and a line break to the text box
             line_break = "\n-------------------------------------------------------------\n"
