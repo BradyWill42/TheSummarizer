@@ -307,12 +307,14 @@ class ScreenshotSummarizerApp:
             # Call GPT function to analyze and generate summary
             #summary = analyze_images_with_gpt(self.image_paths, prompt)
 
+            summary = "Summary Failed"
+
             if (self.ai_models == "gemini"):
                 summary = analyze_images_with_gemini(self.image_paths, prompt)
             elif (self.ai_models == "gpt-4o"):
                 summary = analyze_images_with_gpt(self.image_paths, prompt)
             else:
-                messagebox.showinfo("Invalid AI Model")
+                messagebox.showinfo("Invalid AI Model", "Summary Failed")
 
             # Add the summary and a line break to the text box
             line_break = "\n-------------------------------------------------------------\n"
