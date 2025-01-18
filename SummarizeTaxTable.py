@@ -6,6 +6,17 @@ from PIL import ImageGrab, Image
 import openai
 import ctypes
 import platform
+import google.generativeai as gemini
+
+
+
+geminiApiKey = os.environ["API_KEY_GEMINI"]
+
+if geminiApiKey:
+    print(geminiApiKey)
+else:
+    print("API_KEY_GEMINI not set")
+
 
 myTestApiKey = os.environ["API_KEY"]
 
@@ -13,6 +24,11 @@ if myTestApiKey:
     print(myTestApiKey)
 else:
     print("API_KEY not set")
+
+# Set the Gemini API key
+gemini.configure(api_key=geminiApiKey)
+model = gemini.GenerativeModel("gemini-1.5-flash")
+
 
 # Set your OpenAI API key - v1
 openai.api_key = myTestApiKey
@@ -98,6 +114,15 @@ def take_screenshot(region, file_name):
 def encode_image_to_base64(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
+    
+def analyze_images_with_gemini(image_paths, prompt):
+
+    uploadedFiles = [gemini.upload_file(path=(img)) for img in image_paths]
+
+    response = model.generate_content([uploadedFiles, prompt])
+    print("Generated Summary:\n", response.text)
+
+    return response.text
 
 def analyze_images_with_gpt(image_paths, prompt):
     """
@@ -274,7 +299,10 @@ class ScreenshotSummarizerApp:
                 prompt += f"\n\nDocument Path: {file_path}"
 
             # Call GPT function to analyze and generate summary
-            summary = analyze_images_with_gpt(self.image_paths, prompt)
+            #summary = analyze_images_with_gpt(self.image_paths, prompt)
+
+            summary = analyze_images_with_gemini(self.image_paths, prompt)
+
 
             # Add the summary and a line break to the text box
             line_break = "\n-------------------------------------------------------------\n"
