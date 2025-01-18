@@ -243,8 +243,6 @@ class ScreenshotSummarizerApp:
             Summarize the key information from the document in {self.num_paragraphs.get()} paragraph(s).
             """
 
-            print("NUM PARAGRAPHS\n", self.num_paragraphs.get())
-
             # Step 3: Generate and display the summary
             self.append_summary(prompt, tone, num_paragraphs=int(self.num_paragraphs.get()), file_path=path)
         except Exception as e:
