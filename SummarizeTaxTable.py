@@ -176,8 +176,7 @@ def analyze_images_with_gpt(image_paths, prompt):
         )
 
         # Extract and return the summary
-
-        summary = response.choices[0].message.content       
+        summary = format_text_with_dollars(response.choices[0].message.content) 
         print("Generated Summary:\n", summary)
         return summary
 
