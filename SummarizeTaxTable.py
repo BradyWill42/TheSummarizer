@@ -7,6 +7,7 @@ import openai
 import ctypes
 import platform
 import google.generativeai as gemini
+import re
 
 
 
@@ -124,12 +125,15 @@ def format_number(num):
     else:
         return str(num)
 
-# Function to apply formatting to text
-def format_text_with_numbers(text):
-    return " ".join(
-        format_number(float(word)) if word.replace('.', '', 1).isdigit() else word
-        for word in text.split()
-    )
+# Function to format only numbers with a dollar sign in front
+def format_text_with_dollars(text):
+    # Use a regex to find and replace dollar-signed numbers
+    def replace_dollar_number(match):
+        num = float(match.group(1))  # Extract the numeric part (group 1)
+        return format_number(num)  # Format the number
+
+    # Regex pattern: \$([0-9.,]+) matches a dollar sign followed by a number
+    return re.sub(r'\$([0-9.,]+)', lambda m: replace_dollar_number(m), text)
 
     
 def analyze_images_with_gemini(image_paths, prompt):
@@ -173,9 +177,7 @@ def analyze_images_with_gpt(image_paths, prompt):
 
         # Extract and return the summary
 
-        raw_summary = response.choices[0].message.content
-        summary = format_text_with_numbers(raw_summary)
-        
+        summary = response.choices[0].message.content       
         print("Generated Summary:\n", summary)
         return summary
 
