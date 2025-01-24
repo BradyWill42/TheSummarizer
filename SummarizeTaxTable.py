@@ -129,11 +129,13 @@ def format_number(num):
 def format_text_with_dollars(text):
     # Use a regex to find and replace dollar-signed numbers
     def replace_dollar_number(match):
-        num = float(match.group(1))  # Extract the numeric part (group 1)
+        # Extract the numeric part (group 1) and remove commas
+        num = float(match.group(1).replace(',', ''))  # Remove commas and convert to float
         return format_number(num)  # Format the number
 
     # Regex pattern: \$([0-9.,]+) matches a dollar sign followed by a number
     return re.sub(r'\$([0-9.,]+)', lambda m: replace_dollar_number(m), text)
+
 
     
 def analyze_images_with_gemini(image_paths, prompt):
