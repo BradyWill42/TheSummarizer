@@ -34,14 +34,6 @@ Highlight Specific Changes Using Emphasis:
 Use capitalization sparingly for key words (e.g., “MASSIVE gain”).
 Break out significant changes or new events in their own sentence for clarity.
 If comparing columns, only compare last two years.
-Any numbers between 1,000 and 999,999 should be ROUNDED formated in the syntax: 1k - 999k
-Any numbers greater than 1,000,000 should be formatted as 1MM
-Decimals should only be used to the tenths place and applied only to numbers greater than 1,000,000
 Tax rules to follow: 
 If itemized deductions in 2023 are lower than the standard deduction, then do not mention itemized or standard deductions
 If itemized deductions in 2023 are higher than the standard deduction, then always mention itemized deductions such as mortgage interest and charity
-
-Ignore the following {
-//Round all numbers in thousands to whole numbers before the comma and put "k" at the end.  
-//Summarize all numbers in millions with "MM" at the end.
-//DO NOT USE DECIMALS FOR ANY NUMBERS GREATER THAN 5,000
