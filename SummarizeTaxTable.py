@@ -114,6 +114,23 @@ def take_screenshot(region, file_name):
 def encode_image_to_base64(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
+
+# Helper function to format numbers
+def format_number(num):
+    if 1_000 <= num < 1_000_000:
+        return f"{round(num / 1_000)}k"
+    elif num >= 1_000_000:
+        return f"{round(num / 1_000_000, 1)}MM"
+    else:
+        return str(num)
+
+# Function to apply formatting to text
+def format_text_with_numbers(text):
+    return " ".join(
+        format_number(float(word)) if word.replace('.', '', 1).isdigit() else word
+        for word in text.split()
+    )
+
     
 def analyze_images_with_gemini(image_paths, prompt):
 
@@ -155,7 +172,10 @@ def analyze_images_with_gpt(image_paths, prompt):
         )
 
         # Extract and return the summary
-        summary = response.choices[0].message.content
+
+        raw_summary = response.choices[0].message.content
+        summary = format_text_with_numbers(raw_summary)
+        
         print("Generated Summary:\n", summary)
         return summary
 
