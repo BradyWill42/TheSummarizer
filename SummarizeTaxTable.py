@@ -239,7 +239,7 @@ class ScreenshotSummarizerApp:
 
             prompt = f"""
             You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client.
-            Following the tone indicated in the provided paragraphs: {tone_instructions}
+            Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
             Summarize the key information from the document in {self.num_paragraphs.get()} paragraph(s).
             """
 
@@ -270,7 +270,7 @@ class ScreenshotSummarizerApp:
 
             prompt = f"""
             You are a tax professional analyzing a screenshot of a tax document to prepare a summary for a client.
-            Following the tone indicated in the provided paragraphs: {tone_instructions}
+            Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
             Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key information in {self.num_paragraphs.get()} paragraph(s).
             """
 
