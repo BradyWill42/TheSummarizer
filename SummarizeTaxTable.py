@@ -191,7 +191,15 @@ class ScreenshotSummarizerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("AI Tax Document Summarizer")
-        self.root.geometry("600x550")  # increased height for clarity
+
+         # Get the screen dimensions
+        screen_width = self.root.winfo_screenwidth()
+        screen_height = self.root.winfo_screenheight()
+
+        self.root.maxsize(screen_width, screen_height)
+        self.root.geometry(f"{(int) (screen_width / 2)}x{(int) (screen_height)}+0+0")
+
+
         self.image_paths = []
 
         # Number of paragraphs input
@@ -453,6 +461,7 @@ Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key informa
 def main():
     make_dpi_aware()
     root = tk.Tk()
+
     app = ScreenshotSummarizerApp(root)
     root.mainloop()
 
