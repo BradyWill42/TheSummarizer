@@ -1,3 +1,5 @@
 .venv/
 API_KEY.ps1
 api_keys.txt
+.env
+tax_form*

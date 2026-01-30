@@ -3,36 +3,26 @@ import base64
 import tkinter as tk
 from tkinter import messagebox, ttk
 from PIL import ImageGrab, Image
-import openai
 import ctypes
 import platform
-import google.generativeai as gemini
 import re
 
+from dotenv import load_dotenv
+from google import genai
+from google.genai import types
 
 
-geminiApiKey = os.environ["API_KEY_GEMINI"]
 
-if geminiApiKey:
-    print(geminiApiKey)
-else:
-    print("API_KEY_GEMINI not set")
+# Load .env from project folder (if present)
+load_dotenv()
 
-
-myTestApiKey = os.environ["API_KEY"]
-
-if myTestApiKey:
-    print(myTestApiKey)
-else:
-    print("API_KEY not set")
-
-# Set the Gemini API key
-gemini.configure(api_key=geminiApiKey)
-model = gemini.GenerativeModel("gemini-1.5-flash")
+geminiApiKey = os.getenv("API_KEY_GEMINI")
+if not geminiApiKey:
+    raise RuntimeError("API_KEY_GEMINI environment variable is not set.")
 
 
-# Set your OpenAI API key - v1
-openai.api_key = myTestApiKey
+client = genai.Client(api_key=geminiApiKey)
+model = "gemini-2.5-flash"
 
 # Ensure DPI awareness for accurate screen capture on Windows
 def make_dpi_aware():
@@ -139,53 +129,31 @@ def format_text_with_dollars(text):
 
     
 def analyze_images_with_gemini(image_paths, prompt):
+    parts = []
+    for img_path in image_paths:
+        with open(img_path, "rb") as f:
+            img_bytes = f.read()
 
-    uploadedFiles = [gemini.upload_file(path=(img)) for img in image_paths]
+        lower = img_path.lower()
+        if lower.endswith(".png"):
+            mime_type = "image/png"
+        elif lower.endswith(".webp"):
+            mime_type = "image/webp"
+        elif lower.endswith(".gif"):
+            mime_type = "image/gif"
+        else:
+            mime_type = "image/jpeg"
 
-    response = model.generate_content([*uploadedFiles, prompt])
+        parts.append(types.Part.from_bytes(data=img_bytes, mime_type=mime_type))
+
+    response = client.models.generate_content(
+        model=model,
+        contents=[*parts, prompt],
+    )
 
     summary = format_text_with_dollars(response.text)
     print("Generated Summary:\n", response.text)
     return summary
-
-def analyze_images_with_gpt(image_paths, prompt):
-    """
-    Sends the provided images and prompt to GPT-4 Vision for analysis and summary generation.
-    Args:
-        image_paths (list): List of file paths for images to be analyzed.
-        prompt (str): The dynamically constructed prompt for GPT-4 Vision.
-    Returns:
-        str: The generated summary.
-    """
-    print("Analyzing images with GPT-4 Vision...")
-
-    # Convert each image to a base64-encoded string
-    base64_images = [encode_image_to_base64(path) for path in image_paths]
-
-    # Prepare content for the API request
-    content = [{"type": "text", "text": prompt}]
-    for img in base64_images:
-        content.append({"type": "image_url", "image_url": {"url": f"data:image/png;base64,{img}"}})
-
-    try:
-        # Send the request to GPT-4 Vision
-        response = openai.chat.completions.create(
-            model="gpt-4o",  # Use the appropriate model with vision capabilities
-            messages=[
-                {"role": "system", "content": "You are a professional summarizing financial data."},
-                {"role": "user", "content": content}
-            ],
-            max_tokens=1000,  # Adjust as needed
-        )
-
-        # Extract and return the summary
-        summary = format_text_with_dollars(response.choices[0].message.content) 
-        print("Generated Summary:\n", summary)
-        return summary
-
-    except openai.OpenAIError as e:
-        print(f"Error while calling OpenAI API: {e}")
-        raise
 
 class ScreenshotSummarizerApp:
     def __init__(self, root):
@@ -206,16 +174,16 @@ class ScreenshotSummarizerApp:
         tk.Label(root, text="Number of Paragraphs:").pack(pady=5)
         self.num_paragraphs = ttk.Spinbox(root, from_=1, to=10, width=5)
         self.num_paragraphs.pack(pady=5)
+        # Ensure there's always a valid default value
+        try:
+            self.num_paragraphs.set(1)
+        except Exception:
+            self.num_paragraphs.insert(0, "1")
 
         # Tone selection
         tk.Label(root, text="Tone:").pack(pady=5)
         self.tone_var = tk.StringVar(value="JJ")
         ttk.Combobox(root, textvariable=self.tone_var, values=["Formal", "Informal", "JJ"]).pack(pady=5)
-
-        # AI Selection
-        tk.Label(root, text="AI Model:").pack(pady=5)
-        self.ai_models = tk.StringVar(value="gpt-4o")
-        ttk.Combobox(root, textvariable=self.ai_models, values=["gpt-4o", "gemini"]).pack(pady=5)
 
         # Buttons
         ttk.Button(
@@ -331,7 +299,8 @@ Summarize the key information from the document in {self.num_paragraphs.get()} p
             """.strip()
 
             # Step 3: Generate and display the summary
-            self.append_summary(prompt, tone, num_paragraphs=int(self.num_paragraphs.get()), file_path=path)
+            num_paragraphs_text = (self.num_paragraphs.get() or "").strip() or "1"
+            self.append_summary(prompt, tone, num_paragraphs=int(num_paragraphs_text), file_path=path)
         except Exception as e:
             messagebox.showerror("Error", f"Failed to generate tax summary: {e}")
 
@@ -361,7 +330,8 @@ Following the tone indicated in the provided rules and paragraphs: {tone_instruc
 Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key information in {self.num_paragraphs.get()} paragraph(s).
             """.strip()
 
-            self.append_summary(prompt, tone, num_paragraphs=int(self.num_paragraphs.get()), file_path=path)
+            num_paragraphs_text = (self.num_paragraphs.get() or "").strip() or "1"
+            self.append_summary(prompt, tone, num_paragraphs=int(num_paragraphs_text), file_path=path)
         except Exception as e:
             messagebox.showerror("Error", f"Failed to analyze the tax document screenshot: {e}")
 
@@ -402,15 +372,8 @@ Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key informa
             self.last_file_path = file_path
 
             # Call the AI function to generate the summary.
-            # (The following code assumes that either analyze_images_with_gemini or analyze_images_with_gpt returns the summary.)
             summary = "Summary Failed"
-
-            if self.ai_models.get() == "gemini":
-                summary = analyze_images_with_gemini(self.image_paths, prompt)
-            elif self.ai_models.get() == "gpt-4o":
-                summary = analyze_images_with_gpt(self.image_paths, prompt)
-            else:
-                messagebox.showinfo("Invalid AI Model", "Summary Failed")
+            summary = analyze_images_with_gemini(self.image_paths, prompt)
 
             # Add the summary and a line break to the text box.
             line_break = "\n-------------------------------------------------------------\n"

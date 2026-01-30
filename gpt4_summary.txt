@@ -265,3 +265,15 @@ In terms of your deductions, this year you did not itemize due to the standard d
 
 Looking ahead, consider adjusting your withholdings since you had a balance due of 10k marking a 10k increase from the previous year. It's great to celebrate gains, and a slight tweak in your quarterly payments can help manage potential liabilities more effectively. If you have any questions or need further assistance, feel free to reach out anytime. Here's to another prosperous year!
 -------------------------------------------------------------
+
+
+It looks like the image provided is not a tax document, but rather a screenshot from a code editor showing a software development environment. It details changes related to managing API keys and Python environment variables, along with commands for setting up a Python virtual environment and installing dependencies.
+
+Since this image does not contain any tax forms or financial information, I'm unable to prepare a tax summary or identify any tax form types for you. Please provide an actual tax document if you'd like me to assist with a tax-related summary!
+-------------------------------------------------------------
+
+
+This document appears to be a **Tax Summary Report** or **Tax Comparison Statement**, consolidating key financial and tax data across multiple years (2021, 2022, and 2023) to provide a comparative overview of your tax situation.
+
+Hope all is well! It looks like 2023 was another fantastic year for you, with a **MASSIVE** jump in income compared to 2022, primarily driven by a significant increase in wages—a great thing, of course! Your total income saw an impressive boost of over 207k and it's good to see your business income turn from a loss to a gain. This substantial growth naturally led to higher taxable income and, consequently, a higher total tax of around 98k for the year. It's fantastic that your withholdings also increased significantly, helping to cover a good portion of that, but it does mean we have a balance due of 10k for 2023, which is typical with such a substantial income bump. We should definitely discuss adjusting your withholdings or estimated payments for next year to help manage this going forward!
+-------------------------------------------------------------
