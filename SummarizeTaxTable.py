@@ -407,6 +407,29 @@ Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key informa
 
     def reset_app(self):
         """Reset the application state including the summary, feedback, and related files."""
+        # Delete any screenshots created by this app.
+        # - First, delete what we tracked in-memory (current session).
+        for p in list(self.image_paths):
+            try:
+                if p and os.path.exists(p):
+                    os.remove(p)
+            except Exception:
+                pass
+
+        # - Also delete any leftover screenshots from prior sessions.
+        try:
+            for name in os.listdir(os.getcwd()):
+                if (
+                    name.startswith("tax_form_")
+                    or name.startswith("tax_summary_")
+                ) and name.lower().endswith(".png"):
+                    try:
+                        os.remove(os.path.join(os.getcwd(), name))
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+
         self.image_paths.clear()
         self.output_text.delete("1.0", tk.END)
         # Reset the feedback bar and clear the feedback file.
