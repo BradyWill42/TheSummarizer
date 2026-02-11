@@ -293,7 +293,7 @@ class ScreenshotSummarizerApp:
             tone_instructions = self.get_tone_instructions(tone)
 
             prompt = f"""
-You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2023 to 2024.
+You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2024 to 2025.
 Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
 Summarize the key information from the document in {self.num_paragraphs.get()} paragraph(s).
             """.strip()
