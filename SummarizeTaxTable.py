@@ -78,7 +78,7 @@ def select_region():
     left = min(region["x1"], region["x2"])
     top = min(region["y1"], region["y2"])
     width = abs(region["x2"] - region["x1"])
-    height = abs(region["y2"] - region["y1"])
+    height = abs(region["y2"] - region["y1"])90lk
     return (left, top, width, height)
 
 def take_screenshot(region, file_name):
@@ -170,84 +170,105 @@ class ScreenshotSummarizerApp:
 
         self.image_paths = []
 
+        # --- Tabs: Setup and Prompt ---
+        notebook = ttk.Notebook(root)
+        notebook.pack(fill="both", expand=True, padx=5, pady=5)
+
+        tab_setup = tk.Frame(notebook)
+        tab_prompt = tk.Frame(notebook)
+        notebook.add(tab_setup, text="Setup")
+        notebook.add(tab_prompt, text="Prompt")
+
+        # ========== Setup tab ==========
         # Number of paragraphs input
-        tk.Label(root, text="Number of Paragraphs:").pack(pady=5)
-        self.num_paragraphs = ttk.Spinbox(root, from_=1, to=10, width=5)
+        tk.Label(tab_setup, text="Number of Paragraphs:").pack(pady=5)
+        self.num_paragraphs = ttk.Spinbox(tab_setup, from_=1, to=10, width=5)
         self.num_paragraphs.pack(pady=5)
-        # Ensure there's always a valid default value
+        self.num_paragraphs.bind("<KeyRelease>", lambda e: self._refresh_prompt_preview())
+        self.num_paragraphs.bind("<ButtonRelease-1>", lambda e: self._refresh_prompt_preview())
         try:
             self.num_paragraphs.set(1)
         except Exception:
             self.num_paragraphs.insert(0, "1")
 
         # Tone selection
-        tk.Label(root, text="Tone:").pack(pady=5)
+        tk.Label(tab_setup, text="Tone:").pack(pady=5)
         self.tone_var = tk.StringVar(value="JJ")
-        ttk.Combobox(root, textvariable=self.tone_var, values=["Formal", "Informal", "JJ"]).pack(pady=5)
+        tone_combo = ttk.Combobox(tab_setup, textvariable=self.tone_var, values=["Formal", "Informal", "JJ"])
+        tone_combo.pack(pady=5)
+        tone_combo.bind("<<ComboboxSelected>>", lambda e: self._refresh_prompt_preview())
 
         # Buttons
         ttk.Button(
-            root,
+            tab_setup,
             text="Generate Tax Summary",
             command=self.generate_tax_summary
         ).pack(pady=10)
-
         ttk.Button(
-            root,
+            tab_setup,
             text="Analyze Tax Document",
             command=self.analyze_tax_document_screenshot
         ).pack(pady=10)
+        ttk.Button(tab_setup, text="Reset", command=self.reset_app).pack(pady=10)
 
-        ttk.Button(
-            root, 
-            text="Reset", 
-            command=self.reset_app
-        ).pack(pady=10)
+        # Extra instructions (optional)
+        tk.Label(tab_setup, text="Extra instructions (optional):").pack(pady=(5, 2), anchor="w")
+        self.extra_instructions = tk.Text(tab_setup, height=3, wrap="word", font=("Arial", 10))
+        self.extra_instructions.pack(fill="x", padx=10, pady=(0, 5))
 
-        # --- Dynamic Output Container ---
-        # This container will hold the output text widget and an overlaid feedback bar.
-        self.dynamic_container = tk.Frame(root)
+        # Dynamic Output Container
+        self.dynamic_container = tk.Frame(tab_setup)
         self.dynamic_container.pack(fill="both", expand=True, padx=10, pady=5)
 
-        # Output Text Box inside the container
         self.output_text = tk.Text(self.dynamic_container, wrap="word", font=("Arial", 12))
         self.output_text.pack(side="left", fill="both", expand=True)
-
-        # Vertical Scrollbar for the text widget
         scrollbar = tk.Scrollbar(self.dynamic_container, command=self.output_text.yview)
         scrollbar.pack(side="right", fill="y")
         self.output_text.config(yscrollcommand=scrollbar.set)
 
-        # --- Feedback Overlay ---
+        # Feedback Overlay
         self.feedback_frame = tk.Frame(self.dynamic_container, bg="lightgray")
         self.feedback_frame.place(relx=0, rely=1, anchor="sw", relwidth=1, height=50)
-        
-        # Configure button style
         style = ttk.Style()
         style.configure("Centered.TButton", anchor="center")
-        
-        # Feedback label
-        tk.Label(self.feedback_frame, text="Feedback:", bg="lightgray")\
-            .pack(side="left", padx=(5,2), pady=5)
-        
-        # Feedback entry widget
+        tk.Label(self.feedback_frame, text="Feedback:", bg="lightgray").pack(side="left", padx=(5, 2), pady=5)
         self.feedback_var = tk.StringVar()
         self.feedback_entry = tk.Entry(self.feedback_frame, textvariable=self.feedback_var)
-        self.feedback_entry.pack(side="left", fill="x", expand=True, padx=(2,2), pady=5)
-        
-        # Send button
-        send_button = ttk.Button(self.feedback_frame, text="Send", 
-                                 command=self.send_feedback, style="Centered.TButton")
-        send_button.pack(side="right", padx=(2,5), pady=5)
-        
-        # Set feedback file path
+        self.feedback_entry.pack(side="left", fill="x", expand=True, padx=(2, 2), pady=5)
+        send_button = ttk.Button(self.feedback_frame, text="Send", command=self.send_feedback, style="Centered.TButton")
+        send_button.pack(side="right", padx=(2, 5), pady=5)
+
+        # ========== Prompt tab (read-only) ==========
+        tk.Label(tab_prompt, text="Prompt the summarizer is using (read-only):").pack(pady=(10, 5), anchor="w")
+        prompt_frame = tk.Frame(tab_prompt)
+        prompt_frame.pack(fill="both", expand=True, padx=10, pady=5)
+        self.prompt_display = tk.Text(prompt_frame, wrap="word", font=("Consolas", 9))
+        self.prompt_display.pack(side="left", fill="both", expand=True)
+        prompt_scroll = tk.Scrollbar(prompt_frame, command=self.prompt_display.yview)
+        prompt_scroll.pack(side="right", fill="y")
+        self.prompt_display.config(yscrollcommand=prompt_scroll.set)
+        self.prompt_display.insert("1.0", "Prompt will appear here after you generate or analyze.")
+        self.prompt_display.config(state="disabled")
+
         self.feedback_file = os.path.join(os.getcwd(), "feedback.txt")
-        
-        # Variables to store the last base prompt and parameters for reprompting with feedback.
+        self._refresh_prompt_preview()
         self.last_base_prompt = None
         self.last_tone = None
         self.last_num_paragraphs = None
         self.last_file_path = None
+
+    def _refresh_prompt_preview(self):
+        """Update the Prompt tab with the prompt that would be used (current tone + paragraphs, e.g. gpt_rules)."""
+        tone = self.tone_var.get()
+        tone_instructions = self.get_tone_instructions(tone)
+        num_p = (self.num_paragraphs.get() or "").strip() or "1"
+        prompt = f"""You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2024 to 2025.
+Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
+Summarize the key information from the document in {num_p} paragraph(s)."""
+        self.prompt_display.config(state="normal")
+        self.prompt_display.delete("1.0", tk.END)
+        self.prompt_display.insert("1.0", prompt)
+        self.prompt_display.config(state="disabled")
 
     def send_feedback(self):
         # Get and clean up the feedback text
@@ -365,6 +386,17 @@ Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key informa
             if file_path and "Document Path:" not in prompt:
                 prompt += f"\n\nDocument Path: {file_path}"
 
+            # Append any extra instructions from the user
+            extra = self.extra_instructions.get("1.0", tk.END).strip()
+            if extra:
+                prompt += "\n\nAdditional instructions:\n" + extra
+
+            # Show the full prompt in the Prompt tab (read-only)
+            self.prompt_display.config(state="normal")
+            self.prompt_display.delete("1.0", tk.END)
+            self.prompt_display.insert("1.0", prompt)
+            self.prompt_display.config(state="disabled")
+
             # Store the base prompt and related parameters for reprompting with feedback
             self.last_base_prompt = base_prompt
             self.last_tone = tone
@@ -432,6 +464,9 @@ Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key informa
 
         self.image_paths.clear()
         self.output_text.delete("1.0", tk.END)
+        # Reset prompt display to current preview and clear extra instructions
+        self._refresh_prompt_preview()
+        self.extra_instructions.delete("1.0", tk.END)
         # Reset the feedback bar and clear the feedback file.
         self.feedback_var.set("")
         with open(self.feedback_file, "w", encoding="utf-8") as f:
