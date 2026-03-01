@@ -281,3 +281,147 @@ Hope all is well! It looks like 2023 was another fantastic year for you, with a 
 
 Hope all is well! I've just been reviewing the document, `tax_form_1.png`, you provided. While this isn't a typical tax form like a W-2 or a 1099, it's actually a screenshot showing details of a very important application we use, called `SummarizeTaxTable.exe`! This program is key for us in efficiently processing tax tables and making sure everything is super accurate for you. It's a robust application, weighing in at 28.1 MB, and was last updated quite recently on January 30, 2026. This means it's ready to handle the latest tax complexities! Think of it as one of our specialized tools behind the scenes, ensuring your tax summary is always precise. If you had a different tax form in mind that you were hoping to see summarized, please just give me a shout, and we'll make sure to get that sorted for you!
 -------------------------------------------------------------
+
+
+Hope all is well! I've been reviewing your tax situation, comparing 2024 to 2025, and it looks like another really strong year for you financially! Your total income saw a **MASSIVE** jump, increasing from 432k in 2024 to 577k in 2025, primarily driven by a significant increase in your wages. Your interest and dividend income also saw a slight bump, which is fantastic news, as it means you're doing very well!
+
+As a result of this increased income, your taxable income also rose substantially. We also see a new small loss of (3k) for 2025 in your income details, which slightly reduced your overall taxable income. One important change is that the credits you had in 2024 for 950.0 are no longer present for 2025. This, combined with the higher income, naturally led to a much higher total tax of 134k compared to 86k in 2024.
+
+To offset this, your withholdings and estimated payments were increased, but given the significant jump in income, there's a higher balance due for 2025, coming in at 16k compared to 2k in 2024. This is a good thing as it means you earned a lot more! We should consider adjusting your withholdings or estimated payments even further for next year to minimize that balance due. Let me know if you have any questions, and we can chat through it!
+-------------------------------------------------------------
+
+
+Hope all is well! I've been reviewing your 2024 and 2025 tax projections, and it looks like 2025 was another really strong year for you financially! Your total income and Adjusted Gross Income saw a MASSIVE jump, going from 194k in 2024 to an impressive 492k in 2025. This huge increase was primarily driven by a substantial rise in your wages, more than doubling, and a fantastic shift from a small capital loss in 2024 to a significant capital gain of 76k in 2025 – great to see those gains!
+
+Looking at your deductions, you continued to benefit from itemizing in 2025, with your total itemized deductions increasing nicely from 23k to 46k This bump was mainly due to higher state and local taxes paid, as well as an increase in contributions. However, even with these higher deductions, your taxable income still saw a dramatic increase, jumping from 171k in 2024 to 445k in 2025, which, of course, is a reflection of your overall income growth.
+
+Naturally, with such a fantastic increase in income, your total tax liability also saw a significant rise, going from 34k in 2024 to a much higher 115k in 2025. Your marginal tax rate jumped from 24% to 35%, and your effective rate increased from 19.91% to 24.58%. While your withholdings did increase substantially, they didn't quite cover this large tax increase, resulting in a balance due of 30k for 2025, compared to just 786.0 in 2024. This is a common situation with such a great financial year, and we can definitely look at adjusting future withholdings or estimated payments to better manage this. Let me know if you have any questions or want to discuss this further!
+-------------------------------------------------------------
+
+
+Hope all is well!
+
+I've taken a look at the image provided, aiming to get your 2024 to 2025 tax comparison summary ready. However, it seems the document is just a plain, blank image. There isn't any tax data or specific financial information visible for me to analyze regarding your income, gains, or deductions for either year.
+
+To give you the detailed comparison you're looking for, I'll need a document that contains your actual tax figures or financial details for both 2024 and 2025. Once I have that information, I can certainly put together a personalized summary, highlighting any significant changes and what they mean for you.
+
+Please provide the correct document, and I'll be happy to get this summary prepared for you. Let me know if you have any questions!
+-------------------------------------------------------------
+
+
+Hope you're doing well! Looking at your tax summary for 2025 compared to 2024, we saw some pretty significant shifts in your income. Your total income dropped from 236k in 2024 to 198k in 2025, which is a decrease of 39k This was mainly due to a decrease in your wages by about 11k but the BIGGEST change was the absence of the 28k in pension and IRA distributions you had in 2024.
+
+You saw a significant increase in your total deductions claimed for 2025, reaching 32k up from 17k in 2024. This increase for 2025 was driven by higher medical deductions (16k) and state and local taxes (16k), which allowed you to claim itemized deductions, a positive change! These changes led to a significantly lower taxable income for 2025, coming in at 166k compared to 220k in 2024. As a result, your total tax liability also decreased by a good amount, from 45k to 33k even with the absence of the 3k in credits you received in 2024.
+
+Your withholdings were adjusted down by 8k in 2025, but with the overall decrease in your tax liability, you're looking at a much NICER refund of 6k for 2025, which is 4k more than your 2024 refund! It's also great to see your marginal tax rate drop from 32% to 24% and your effective tax rate decrease from 21.84% to 19.69%. All in all, a solid outcome for 2025. Let me know if you have any questions, and we can discuss any potential adjustments for your 2026 planning!
+-------------------------------------------------------------
+
+
+Hope all is well! I've reviewed your tax comparison for 2024 and 2025, and it looks like 2025 is shaping up to be quite a year for you and your family, especially with your two dependents! We're seeing a really strong increase in your wages, jumping up by a MASSIVE 138k compared to last year. This brings your total income to a robust 321k a great sign of your continued financial success!
+
+With that great increase in income, we also see some positive shifts in your deductions. Your itemized deductions are looking strong again, totaling 63k in 2025, significantly higher than your standard deduction and a BIG jump from 2024. This is largely driven by increased State and Local taxes, now at 19k and a notable increase in interest, likely your mortgage interest, which has grown to 43k Your charitable contributions also saw a bump to 900.0 While your overall taxable income increased to 258k leading to a higher tax of 48k this is a good thing as it reflects your higher earnings!
+
+To cover your higher tax liability, your withholdings for 2025 are projected to be a fantastic 55k which is a HUGE increase from 2024! This proactive adjustment means you’re looking at a great refund of 6k for 2025, and best of all, no balance due compared to last year's small amount. This is a very positive outcome! Let me know if you have any questions at all about these changes or if you’d like to discuss anything further. We're all set here!
+-------------------------------------------------------------
+
+
+Hey there! Hope you're doing well. We've taken a look at your tax situations comparing 2024 to 2025 across different filing scenarios, and it’s definitely a mix of outcomes, reflecting some pretty significant financial shifts. We're seeing diverse income movements: one scenario shows a notable decrease in total income, largely due to a drop in wages and the cessation of pension/IRA distributions. Conversely, other scenarios highlight **MASSIVE** income jumps, either from moving to Married Joint filing with combined incomes or experiencing a fantastic surge in capital gains. It's clear that changes in your income sources and filing status are major drivers for these yearly differences!
+
+These varying income pictures naturally lead to different tax outcomes. In scenarios with decreased income, we're seeing significantly lower total tax liabilities and much nicer refunds. Where income saw huge increases, total tax liability also climbed, but we often see those increases managed well, supported by larger itemized deductions (like state and local taxes, interest, and contributions) or increased withholdings. It's great to see your deductions working hard for you in certain situations to help balance out higher incomes.
+
+Looking at the bottom line, some scenarios are netting fantastic refunds of over 6k which is always a positive! However, with large income surges, some situations are also showing a sizable balance due, sometimes exceeding 15k along with a small estimated tax penalty. This really highlights the importance of regularly reviewing and adjusting your withholdings and estimated payments to match your income flows, especially with significant capital gains or changes in filing status. Let's make sure we optimize this for next year to avoid any surprises!
+-------------------------------------------------------------
+
+
+Hope all is well!
+
+Another great year for you as we look at your 2025 tax projections compared to 2024! Your total adjusted gross income saw a significant jump of 149k going from 481k in 2024 to 630k in 2025. This substantial increase was primarily driven by higher wages, which rose by almost 149k along with increased taxable interest and rent income. While we see a new business loss of 1k and slightly lower investment gains, your overall income growth is truly impressive!
+
+On the deductions front, your itemized deductions increased slightly to 34k for 2025, which is still comfortably higher than the standard deduction, continuing to provide you with a good benefit. This, combined with your higher income, led to your taxable income rising by almost 150k to 596k Consequently, your overall total tax liability also increased by 53k reaching 182k It's great to see your credits have gone up as well, which helped to somewhat offset that tax increase!
+
+Looking at your payments, you had significantly higher withholdings in 2025 and also made estimated tax payments of 28k which is fantastic and helped manage your tax obligation throughout the year. As a result, despite the higher tax, your balance due for 2025 is actually lower by over 13k compared to 2024, standing at 14k A good thing, of course, as it means you're closer to being paid up! Let me know if you have any questions at all, and we can discuss any adjustments for next year if needed.
+-------------------------------------------------------------
+
+
+Hey there! Hope all is well.
+
+Looks like another strong year for you as we project out to 2025, with your total income increasing by about 22k compared to 2024! This is primarily driven by a nice increase in your wages. We are also seeing a change in your gains, with a lower amount projected for 2025 compared to 2024, but it's still good to have gains on the books!
+
+For 2025, we're able to utilize itemized deductions, specifically claiming around 17k in state and local taxes. This is a positive change, as itemizing helps reduce your taxable income compared to the standard deduction. Even with this, your taxable income is up, which means your total tax liability is also increasing by about 8k—a good thing, of course, because it reflects your higher income!
+
+The BEST news is about your payments and what you'll owe. With increased withholdings and adding in estimated tax payments for 2025, your balance due is significantly lower—a fantastic reduction of over 13k! This means you're much closer to being paid up, and even better, you won't have an estimated tax penalty in 2025, which is a HUGE win. Let me know if you have any questions!
+-------------------------------------------------------------
+
+
+Hope all is well! We're looking at a pretty incredible year for you in 2025 compared to 2024. Your total income has seen a HUGE jump, increasing by over 392k! This is primarily driven by a MASSIVE increase in gains, which shot up by over 325k along with a solid bump in your wages by almost 80k While your interest and dividends saw a decrease, the overall picture for your income is very strong.
+
+With such a great year, it's no surprise that your overall tax liability also increased significantly, up by about 81k It's a good thing, of course, because it means you made a lot more money! Your total deductions claimed increased by 2k for 2025, which helped a little. We also see that the 2k in credits you received in 2024 were not present in 2025, and your "other taxes" category jumped by over 12k reflecting your higher income levels.
+
+Looking at payments, your withholdings went up by over 11k and it looks like we made an excellent move by putting in 75k in estimated tax payments for 2025! This is a BIG reason why, instead of owing a balance like in 2024, you're actually set for a nice 5k refund in 2025—fantastic! Your marginal tax rate did jump quite a bit from 24% to 35%, but it's interesting to see your effective tax rate actually dipped slightly, which often happens when a large portion of your income comes from long-term capital gains. Let me know if you have any questions!
+-------------------------------------------------------------
+
+
+Hey there! Hope all is well. It looks like you're set for another truly impressive financial year as we look ahead to 2025 compared to 2024, with significant growth in overall income across the board. For your Married Joint filing, we're seeing a *massive* increase of almost 400k in total income, largely thanks to a HUGE jump in capital gains and a substantial rise in wages. While this does mean your marginal tax rate will increase from 24% to 35%, it's definitely a good problem to have—it means you made a lot more money! We've also factored in a big increase in tax credits, which helps keep your effective tax rate slightly lower despite the much higher income.
+
+Shifting to your Single filing, it's a similar story of strong growth! Your total income is projected to rise by over 165k primarily driven by a substantial increase in wages. Even with a slight dip in gains, your financial picture is looking very robust. With this growth, your effective tax rate will tick up a bit from 27.86% to 29.54%, which is expected when you're doing so well financially. We’ve also noted an increase in other deductions and a nice bump in tax credits that are helping to manage the overall tax liability.
+
+Overall, it’s shaping up to be a fantastic year, indicating strong financial performance! Given the significant increase in income and potential tax liability, especially with the capital gains, it’s wise to keep an eye on estimated payments. For the Married Joint filing, we’ve already penciled in an additional 75k in estimated payments for 2025, which is great. Let's touch base if you have any questions or want to discuss adjustments as the year progresses.
+-------------------------------------------------------------
+
+
+Hope you're doing great! Diving into your 2025 tax projection compared to 2024, we see a positive overall picture for you. While your total income showed a slight decrease of about 18k landing at 712k for 2025, it’s excellent to see your gains jump by over 4k and your taxable interest/dividends also increase by 500.0 Your filing status as Married Joint with 2 dependents remains the same, providing a stable foundation for your tax planning.
+
+Regarding deductions, it's worth noting that your itemized deductions were beneficial again, remaining virtually the same at 32k for 2025. This, combined with the income adjustments, brought your overall tax liability down by a good amount—almost 9k! A KEY difference this year is the adjustment we made to your estimated tax payments; we significantly increased them to 40k for 2025, which was a smart move.
+
+And the best part? Thanks to those proactive estimated payments, instead of a balance due like in 2024, you're projected for a FANTASTIC refund of 4k for 2025! Your marginal tax rate holds steady at 35%, and your effective tax rate even saw a small drop to 25.70%. This looks like a solid outcome. Let me know if anything here sparks questions, or if you'd like to discuss future adjustments!
+-------------------------------------------------------------
+
+
+Hope all is well! We've completed our initial review comparing your 2025 tax situation to 2024, and there are some notable changes. Your total income for 2025 saw a reduction of about 66k primarily driven by a significant shift in your capital gains position, going from a gain of over 80k in 2024 to a small loss in 2025. On the bright side, your wages saw a nice increase of 14k and your taxable interest and dividends also climbed by 3k which is always good to see!
+
+A really positive development for 2025 is your deductions! This year, you've successfully claimed itemized deductions totaling 37k which incorporates medical deductions, state and local taxes, and contributions. This is a great improvement, allowing you to deduct significantly more than the standard deduction claimed in 2024. As a result, your taxable income for 2025 is down by over 81k compared to 2024, bringing your total tax liability down by almost 20k – a fantastic outcome!
+
+These changes have led to a VERY positive shift in your final tax outcome! Instead of a balance due of 18k in 2024, you're now looking at a wonderful REFUND of 14k for 2025! This is also partly thanks to your increased estimated tax payments for the year. Please let me know if you have any questions at all about this summary, and we can certainly discuss these figures further or begin planning for next year.
+-------------------------------------------------------------
+
+
+Hope all is well! I've been reviewing your tax situation, and it looks like 2025 was another really strong year for you financially, comparing it to 2024. Your overall income saw a HUGE jump, increasing by over 163k! This was largely driven by a substantial increase in your wages, climbing by more than 162k along with a nice boost in taxable interest and dividends. We did see your business income go down slightly, but that was well offset by solid gains from other sources.
+
+With that fantastic income growth, your Adjusted Gross Income also went up quite a bit. What's notable for 2025 is that you had significant itemized deductions this year, primarily from medical expenses totaling over 27k and some interest, which were much higher than the standard deduction available to you. These itemized deductions, along with a Qualified Business Income Deduction, helped manage your taxable income. However, given your much higher income, your total tax liability increased by over 53k which, of course, means you had a great year for earning!
+
+Looking at your payments, you did a great job with withholdings and estimated tax payments, totaling over 136k for the year. This made a significant difference! While you still have a balance due for 2025, it's a NICE reduction of over 9k compared to what you owed in 2024, which is always good to see. Your effective tax rate increased slightly to 28.67%, reflecting your higher income. Let me know if you have any questions, and we can chat through anything!
+-------------------------------------------------------------
+
+
+Here are the summaries for your clients, comparing 2024 to 2025:
+
+---
+
+**Summary for Single Filer**
+
+Hope all is well! It looks like you had another really strong financial year, with your income projected to see a **BIG jump** of over 163k from 2024 to 2025, primarily driven by a substantial increase in wages. It’s always great to see that kind of growth, even if it means a bit more planning on the tax side. We also saw some nice growth in your taxable interest and dividends, though your capital gains were a bit lower, which is perfectly normal year-to-year.
+
+For 2025, your deductions picture changed quite a bit. While in 2024 you claimed the standard deduction, for 2025, your itemized deductions—including significant medical expenses and state and local taxes—are projected to be much higher, allowing you to claim over 27k in deductions. This helped manage your taxable income, even with such a large overall income increase. Ultimately, your total tax liability is projected to increase by about 53k which is to be expected with such a substantial income boost.
+
+The great news is that despite the higher income and tax, your estimated tax payments for 2025 look like they're doing their job! We're projecting a balance due that's nearly 9k *less* than what you owed in 2024, which is a fantastic outcome. Your effective tax rate saw a slight increase, but that's a natural progression with higher income. We'll certainly want to keep an eye on your withholdings and estimated payments for 2026 to make sure we stay on track. Let me know if you have any questions!
+
+---
+
+**Summary for Married Joint Filer**
+
+Hope you both are doing great! Looking at your projected tax situation from 2024 to 2025, it continues to be a period of strong earnings. Your total income is projected to increase by over 51k mainly thanks to continued growth in your wages. Your taxable interest and dividends also saw a modest rise, which is always a nice bonus, though we saw a slight dip in IRA distributions for 2025. Overall, another excellent year for your financial picture!
+
+Regarding deductions, in 2024, your itemized deductions, including medical and state and local taxes, were slightly more beneficial than the standard deduction. For 2025, your total deductions claimed increased slightly to 32k which helps reduce your taxable income. While your total tax liability is projected to increase by just over 15k which is expected with higher income, it's worth noting the **BIG boost** in credits for 2025. That jump in credits is fantastic and helps to offset some of that increased tax.
+
+Here's the really **GREAT news**: despite the higher income and total tax, your increased withholdings for 2025 are projected to bring your balance due down by a whopping 19k compared to 2024! That's a huge difference and puts you in a much better position come tax time. Your effective tax rate saw a very modest increase, which is completely normal with your income growth. We'll ensure your withholdings and any estimated payments remain appropriate for 2026. Please reach out if anything is unclear!
+-------------------------------------------------------------
+
+
+Hope all is well!
+
+Another great year for you, with your total income increasing by a solid 26k from 2024 to 2025, bringing your total income to 688k! While your wages saw a slight dip, that was more than offset by a nice increase in taxable interest and dividends, and your gains were up significantly by 10k which is always a good thing as it means you’re making money! We also saw new unemployment compensation reported in 2025 at 10k
+
+This growth in income naturally led to a higher taxable income, landing at 657k in 2025, up from 633k in 2024. For both years, you're claiming the standard deduction, which is great. Overall, your total tax increased by 5k in 2025, bringing it to 166k which makes sense given your higher income and gains.
+
+One key change this year is that instead of receiving a refund like last year, you have a balance due of 2k for 2025. This is mainly due to your estimated tax payments decreasing by 4k while your total tax liability increased. We can definitely look at adjusting your withholdings or estimated payments for next year to avoid owing again if that's your preference. Let me know if you have any questions at all!
+-------------------------------------------------------------
