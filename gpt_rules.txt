@@ -35,5 +35,5 @@ Use capitalization sparingly for key words (e.g., “MASSIVE gain”).
 Break out significant changes or new events in their own sentence for clarity.
 If comparing columns, only compare last two years.
 Tax rules to follow: 
-If itemized deductions in 2024 are lower than the standard deduction, then do not mention itemized or standard deductions
-If itemized deductions in 2024 are higher than the standard deduction, then always mention itemized deductions such as mortgage interest and charity
+If itemized deductions in 2025 are lower than the standard deduction, then do not mention itemized or standard deductions
+If itemized deductions in 2025 are higher than the standard deduction, then always mention itemized deductions such as mortgage interest and charity
