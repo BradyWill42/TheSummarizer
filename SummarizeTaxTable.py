@@ -78,7 +78,7 @@ def select_region():
     left = min(region["x1"], region["x2"])
     top = min(region["y1"], region["y2"])
     width = abs(region["x2"] - region["x1"])
-    height = abs(region["y2"] - region["y1"])90lk
+    height = abs(region["y2"] - region["y1"])
     return (left, top, width, height)
 
 def take_screenshot(region, file_name):
@@ -212,7 +212,7 @@ class ScreenshotSummarizerApp:
         ttk.Button(tab_setup, text="Reset", command=self.reset_app).pack(pady=10)
 
         # Extra instructions (optional)
-        tk.Label(tab_setup, text="Extra instructions (optional):").pack(pady=(5, 2), anchor="w")
+        tk.Label(tab_setup, text="Extra instructions (Pre-Generation, Optional):").pack(pady=(5, 2), anchor="w")
         self.extra_instructions = tk.Text(tab_setup, height=3, wrap="word", font=("Arial", 10))
         self.extra_instructions.pack(fill="x", padx=10, pady=(0, 5))
 
@@ -231,7 +231,7 @@ class ScreenshotSummarizerApp:
         self.feedback_frame.place(relx=0, rely=1, anchor="sw", relwidth=1, height=50)
         style = ttk.Style()
         style.configure("Centered.TButton", anchor="center")
-        tk.Label(self.feedback_frame, text="Feedback:", bg="lightgray").pack(side="left", padx=(5, 2), pady=5)
+        tk.Label(self.feedback_frame, text="Feedback (Post-Generation, Optional):", bg="lightgray").pack(side="left", padx=(5, 2), pady=5)
         self.feedback_var = tk.StringVar()
         self.feedback_entry = tk.Entry(self.feedback_frame, textvariable=self.feedback_var)
         self.feedback_entry.pack(side="left", fill="x", expand=True, padx=(2, 2), pady=5)
