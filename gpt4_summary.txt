@@ -283,6 +283,7 @@ Hope all is well! I've just been reviewing the document, `tax_form_1.png`, you p
 -------------------------------------------------------------
 
 
+<<<<<<< HEAD
 Hope all is well! I've been reviewing your tax situation, comparing 2024 to 2025, and it looks like another really strong year for you financially! Your total income saw a **MASSIVE** jump, increasing from 432k in 2024 to 577k in 2025, primarily driven by a significant increase in your wages. Your interest and dividend income also saw a slight bump, which is fantastic news, as it means you're doing very well!
 
 As a result of this increased income, your taxable income also rose substantially. We also see a new small loss of (3k) for 2025 in your income details, which slightly reduced your overall taxable income. One important change is that the credits you had in 2024 for 950.0 are no longer present for 2025. This, combined with the higher income, naturally led to a much higher total tax of 134k compared to 86k in 2024.
@@ -424,4 +425,35 @@ Another great year for you, with your total income increasing by a solid 26k fro
 This growth in income naturally led to a higher taxable income, landing at 657k in 2025, up from 633k in 2024. For both years, you're claiming the standard deduction, which is great. Overall, your total tax increased by 5k in 2025, bringing it to 166k which makes sense given your higher income and gains.
 
 One key change this year is that instead of receiving a refund like last year, you have a balance due of 2k for 2025. This is mainly due to your estimated tax payments decreasing by 4k while your total tax liability increased. We can definitely look at adjusting your withholdings or estimated payments for next year to avoid owing again if that's your preference. Let me know if you have any questions at all!
+=======
+Here's a summary of your Tax Return Comparison document, following the tone and structure you outlined:
+
+Hey [Client Name], hope all is well! Here's a quick summary of your Tax Return Comparison document, covering 2023, 2024, and a 2025 projection. It’s always insightful to look at these numbers year-over-year!
+
+What a difference a year makes! In 2023, filing as Single, you had a truly REMARKABLE year, driven by a MASSIVE gain of almost 2.0 million, bringing your total income to over 2.0 million. You were able to itemize your deductions, claiming 30k from state and local taxes, and interest. This ultimately led to a balance due of 451k Fast forward to 2024, you've transitioned to Married Joint filing, with a healthy income from wages and S-corp income totaling around 395k This year, you claimed the standard deduction of 29k and with your solid withholdings and other payments, you're actually looking at a nice refund of 15k! It’s great to see that shift from owing a lot to getting a refund, even with a penalty for estimated taxes.
+
+Now, comparing 2024 to the 2025 projection, it's clear 2025 anticipates a very different financial picture. The comparison suggests almost no income or tax liability for 2025 compared to 2024, implying a significant reduction in financial activity. However, the standard deduction is projected to increase slightly to 32k for 2025, and the marginal tax rate is expected to drop to 10%. This sort of dramatic change is often useful for future planning scenarios, highlighting a potential year with minimal taxable income.
+
+Let me know if you have any questions on these comparisons or if you'd like to dive deeper into any of these figures for your future planning! Always here to help.
+-------------------------------------------------------------
+
+
+This document is a **Tax Return Comparison**, which provides a summary of your tax filings for 2023 and 2024, along with a projected outlook for 2025.
+
+Hope all is well! Here's a quick look at your tax summary comparing 2023, 2024, and a forward look into 2025. 2023 was a truly phenomenal year, where your filing status was Single, and you saw a MASSIVE gain of almost 2.0 million, bringing your total income to over 2.0 million! You effectively utilized itemized deductions totaling 30k including significant state and local taxes, leading to a substantial balance due of 451k—a good sign of such a profitable year. Transitioning to 2024, you filed as Married Joint, and while your income normalized to around 395k from wages and S-corp income (still a great figure!), your total tax dropped considerably to 74k You wisely claimed the standard deduction of 29k which was more beneficial than itemized deductions that year, resulting in a nice refund of 15k even with a small estimated tax penalty. Looking ahead to 2025, based on the projection provided, it appears to be a scenario with effectively no taxable income from wages or S-corps, leading to a zero tax liability and a 0% effective tax rate, though your standard deduction is projected to increase slightly to 32k This comparison helps give us a great overview of your financial journey! Let me know if you have any questions at all.
+-------------------------------------------------------------
+
+
+This document is a 'Tax Return Comparison' report, offering a clear look at your financial picture. Hope all is well! I've reviewed this comparison, focusing on your 2024 tax year alongside a baseline view for 2025.
+
+You had a strong 2024 with total income reaching 395k including significant wages of 344k and 51k from S-corps or trusts. This impressive income resulted in a taxable income of 366k and a total tax liability of 74k (which included your self-employment tax).
+
+For deductions, you wisely claimed the standard deduction of 29k in 2024, as it was the most beneficial option. Looking ahead, the standard deduction is projected to increase to 32k for 2025. After accounting for your withholdings, estimated payments, and other credits totaling 90k in 2024, you're set to receive a **NICE** refund of 15k! It’s always great to see a refund, showing your payments were well-managed. Your marginal tax rate for 2024 was 24.00%. Let me know if you have any questions!
+-------------------------------------------------------------
+
+
+Here's a summary of your Tax Return Comparison, focusing on the changes between 2024 and 2025:
+
+It looks like your tax situation saw some significant shifts from 2024 to 2025! Most notably, your wages saw a HUGE decrease of 344k and other income, like your Part S-corps, trusts income, also dropped by 51k This brought your total income down by a substantial 395k On the deduction side, while specific itemized deductions like medical and contributions were lower, your standard deduction actually increased, leading to an overall boost in your total claimed deductions by 2k All these changes combined meant your taxable income dropped by a massive 366k resulting in a much lower total tax liability—down by an impressive 74k! Both your marginal and effective tax rates also saw a significant reduction. While the *difference* in your overpayment between the years indicates less was overpaid in 2025 compared to 2024, reflecting the reduced income and withholdings, it's always positive to see a lighter tax burden overall! Let me know if you have any questions.
+>>>>>>> 3264399454383dd3c60fec80775d75d423737bf0
 -------------------------------------------------------------
