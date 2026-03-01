@@ -198,6 +198,15 @@ class ScreenshotSummarizerApp:
         tone_combo.pack(pady=5)
         tone_combo.bind("<<ComboboxSelected>>", lambda e: self._refresh_prompt_preview())
 
+        # Clear prompt: when checked, only use paragraph count + extra instructions (no rules/tone)
+        self.clear_prompt_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(
+            tab_setup,
+            text="Clear prompt (use only paragraph count + text below, no rules/tone)",
+            variable=self.clear_prompt_var,
+            command=self._refresh_prompt_preview,
+        ).pack(pady=5, anchor="w")
+
         # Buttons
         ttk.Button(
             tab_setup,
@@ -215,6 +224,7 @@ class ScreenshotSummarizerApp:
         tk.Label(tab_setup, text="Extra instructions (Pre-Generation, Optional):").pack(pady=(5, 2), anchor="w")
         self.extra_instructions = tk.Text(tab_setup, height=3, wrap="word", font=("Arial", 10))
         self.extra_instructions.pack(fill="x", padx=10, pady=(0, 5))
+        self.extra_instructions.bind("<KeyRelease>", lambda e: self._refresh_prompt_preview())
 
         # Dynamic Output Container
         self.dynamic_container = tk.Frame(tab_setup)
@@ -258,11 +268,16 @@ class ScreenshotSummarizerApp:
         self.last_file_path = None
 
     def _refresh_prompt_preview(self):
-        """Update the Prompt tab with the prompt that would be used (current tone + paragraphs, e.g. gpt_rules)."""
-        tone = self.tone_var.get()
-        tone_instructions = self.get_tone_instructions(tone)
+        """Update the Prompt tab with the prompt that would be used."""
         num_p = (self.num_paragraphs.get() or "").strip() or "1"
-        prompt = f"""You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2024 to 2025.
+        if self.clear_prompt_var.get():
+            user_text = self.extra_instructions.get("1.0", tk.END).strip()
+            prompt = user_text if user_text else "Summarize the document."
+            prompt += f"\n\nSummarize in {num_p} paragraph(s)."
+        else:
+            tone = self.tone_var.get()
+            tone_instructions = self.get_tone_instructions(tone)
+            prompt = f"""You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2024 to 2025.
 Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
 Summarize the key information from the document in {num_p} paragraph(s)."""
         self.prompt_display.config(state="normal")
@@ -309,18 +324,21 @@ Summarize the key information from the document in {num_p} paragraph(s)."""
             path = take_screenshot(region, file_name)
             self.image_paths.append(path)
 
-            # Step 2: Prepare the prompt for summarizing the screenshot
-            tone = self.tone_var.get()
-            tone_instructions = self.get_tone_instructions(tone)
-
-            prompt = f"""
-You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2024 to 2025.
+            # Step 2: Prepare the prompt
+            num_paragraphs_text = (self.num_paragraphs.get() or "").strip() or "1"
+            if self.clear_prompt_var.get():
+                user_text = self.extra_instructions.get("1.0", tk.END).strip()
+                prompt = user_text if user_text else "Summarize the document."
+                prompt += f"\n\nSummarize in {num_paragraphs_text} paragraph(s)."
+                tone = self.tone_var.get()
+            else:
+                tone = self.tone_var.get()
+                tone_instructions = self.get_tone_instructions(tone)
+                prompt = f"""You are a tax professional analyzing a screenshot of a tax year over year comparison to prepare a summary for a client always comparing 2024 to 2025.
 Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
-Summarize the key information from the document in {self.num_paragraphs.get()} paragraph(s).
-            """.strip()
+Summarize the key information from the document in {num_paragraphs_text} paragraph(s).""".strip()
 
             # Step 3: Generate and display the summary
-            num_paragraphs_text = (self.num_paragraphs.get() or "").strip() or "1"
             self.append_summary(prompt, tone, num_paragraphs=int(num_paragraphs_text), file_path=path)
         except Exception as e:
             messagebox.showerror("Error", f"Failed to generate tax summary: {e}")
@@ -341,17 +359,20 @@ Summarize the key information from the document in {self.num_paragraphs.get()} p
             path = take_screenshot(region, file_name)
             self.image_paths.append(path)
 
-            # Prepare the prompt for tax document analysis
-            tone = self.tone_var.get()
-            tone_instructions = self.get_tone_instructions(tone)
-
-            prompt = f"""
-You are a tax professional analyzing a screenshot of a tax document to prepare a summary for a client.
-Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
-Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key information in {self.num_paragraphs.get()} paragraph(s).
-            """.strip()
-
+            # Prepare the prompt
             num_paragraphs_text = (self.num_paragraphs.get() or "").strip() or "1"
+            if self.clear_prompt_var.get():
+                user_text = self.extra_instructions.get("1.0", tk.END).strip()
+                prompt = user_text if user_text else "Summarize the document."
+                prompt += f"\n\nSummarize in {num_paragraphs_text} paragraph(s)."
+                tone = self.tone_var.get()
+            else:
+                tone = self.tone_var.get()
+                tone_instructions = self.get_tone_instructions(tone)
+                prompt = f"""You are a tax professional analyzing a screenshot of a tax document to prepare a summary for a client.
+Following the tone indicated in the provided rules and paragraphs: {tone_instructions}
+Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key information in {num_paragraphs_text} paragraph(s).""".strip()
+
             self.append_summary(prompt, tone, num_paragraphs=int(num_paragraphs_text), file_path=path)
         except Exception as e:
             messagebox.showerror("Error", f"Failed to analyze the tax document screenshot: {e}")
@@ -386,10 +407,11 @@ Identify the tax form type (e.g., W-2, 1099, etc.) and summarize the key informa
             if file_path and "Document Path:" not in prompt:
                 prompt += f"\n\nDocument Path: {file_path}"
 
-            # Append any extra instructions from the user
-            extra = self.extra_instructions.get("1.0", tk.END).strip()
-            if extra:
-                prompt += "\n\nAdditional instructions:\n" + extra
+            # Append extra instructions only when not using Clear prompt (clear prompt already uses that text)
+            if not self.clear_prompt_var.get():
+                extra = self.extra_instructions.get("1.0", tk.END).strip()
+                if extra:
+                    prompt += "\n\nAdditional instructions:\n" + extra
 
             # Show the full prompt in the Prompt tab (read-only)
             self.prompt_display.config(state="normal")
